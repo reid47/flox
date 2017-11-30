@@ -1,0 +1,12 @@
+{
+  "name": "flox",
+  "version": "0.0.1",
+  "description": "Small, functional flexbox CSS library",
+  "main": "flox.css",
+  "scripts": {},
+  "author": "Reid Mitchell",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  }
+}
