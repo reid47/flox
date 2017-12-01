@@ -1,7 +1,7 @@
 {
   "name": "flox",
   "version": "0.0.1",
-  "description": "Small, functional flexbox CSS library",
+  "description": "Small, easy-to-use CSS layout library based on flexbox",
   "main": "flox.css",
   "scripts": {
     "serve": "./node_modules/.bin/live-server --watch=\"flox.css,index.html\"",
