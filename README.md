@@ -1,3 +1,3 @@
 # flox
 
-Small, functional flexbox CSS library
+Small, easy-to-use CSS layout library based on flexbox
