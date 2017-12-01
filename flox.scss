@@ -1,15 +1,78 @@
+$unit: 0.5rem;
+$sizes: (
+  0: 0,
+  s: $unit / 2,
+  m: $unit,
+  l: $unit * 2,
+  xl: $unit * 3,
+  xxl: $unit * 4
+);
+
 .flex {
   display: flex;
+  box-sizing: border-box;
+
+  // Alignment of boxes along secondary axis
+  &.items-start { align-items: flex-start; }
+  &.items-center { align-items: center; }
+  &.items-end { align-items: flex-end; }
+  &.items-baseline { align-items: baseline; }
+
+  // Alignment of boxes along primary axis
+  &.justify-start { justify-content: flex-start; }
+  &.justify-center { justify-content: center; }
+  &.justify-end { justify-content: flex-end; }
+  &.justify-between { justify-content: space-between; }
+  &.justify-around { justify-content: space-around; }
+  &.justify-evenly { justify-content: space-evenly; }
 }
 
 .row {
+  flex-direction: row;
+  box-sizing: border-box;
 
+  @each $sizeName, $size in $sizes {
+    &.gap-#{$sizeName} {
+      > .box {
+        margin-left: $size;
+        margin-right: $size;
+        &:first-child { margin-left: 0; }
+        &:last-child { margin-right: 0; }
+      }
+    }
+  }
 }
 
 .col {
+  flex-direction: column;
+  box-sizing: border-box;
 
+  @each $sizeName, $size in $sizes {
+    &.gap-#{$sizeName} {
+      > .box {
+        margin-top: $size;
+        margin-bottom: $size;
+        &:first-child { margin-top: 0; }
+        &:last-child { margin-bottom: 0; }
+      }
+    }
+  }
 }
 
 .box {
+  flex: 1 1 auto;
+  box-sizing: border-box;
 
+  &.fixed {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  &.content-start, &.content-center, &.content-end {
+    display: flex;
+    flex-direction: column;
+  }
+  &.content-start { justify-content: flex-start; }
+  &.content-center { justify-content: center; }
+  &.content-end { justify-content: flex-end; }
 }
