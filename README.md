@@ -10,7 +10,7 @@ There are a lot of great libraries out there similar to this one (many of which 
 
 - Use **no negative margins** anywhere, since these can sometimes lead to unexpected results when nesting grids within each other or within other layout elements.
 
-- Include support for flex columns (`flex-direction: column`) in addition to rows, to allow for more options in two-dimensional layouts.
+- Include support for **flex columns** (`flex-direction: column`) in addition to rows, to allow for more options in two-dimensional layouts.
 
 ## Developing
 
