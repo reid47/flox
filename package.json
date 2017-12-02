@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Small, easy-to-use CSS layout library based on flexbox",
   "main": "flox.css",
+  "unpkg": "flox.min.css",
   "scripts": {
     "serve": "./node_modules/.bin/live-server --watch=\"flox.css,index.html\"",
     "build:scss-to-css": "./node_modules/.bin/node-sass flox.scss flox.css",
