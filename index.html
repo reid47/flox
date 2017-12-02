@@ -1,77 +1,334 @@
-<!DOCTYPE html><html><head><title>flox</title><link rel="stylesheet" type="text/css" href="flox.css"><style type="text/css">body, html {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-  text-align: center;
-  font-family: monospace;
-  width: 100%;
-}
-
-.space {
-  margin-top: 1rem;
-}
-
-.box {
-  height: 100px;
-  background: rgba(0, 140, 140, 1);
-  /*box-shadow: inset 0 0 0 0.5rem rgb(0, 100, 100);*/
-  color: #fff;
-}
-
-.box > .box {
-  background: yellow;
-}
-
-.box > .box > .box {
-  background: blue;
-}
-
-.content {
-  display: block;
-  background: tomato;
-}
-
-.w-20 {
-  width: 20px;
-}
-
-.w-50 {
-  width: 50px;
-}
-
-.w-100 {
-  width: 100px;
-}
-
-.h-init {
-  height: initial;
-}
-
-.h-20 {
-  height: 20px;
-}
-
-.h-50 {
-  height: 50px;
-}
-
-.h-100 {
-  height: 100px;
-}
-
-.h-400 {
-  height: 400px;
-}
-
-.p-t-1 {
-  padding-top: 1rem;
-}
-
-.p-t-2 {
-  padding-top: 2rem;
-}
-
-.p-t-3 {
-  padding-top: 3rem;
-}
-</style></head><body><h1>auto grids</h1><div class="flex row gap-m"><div class="box"></div><div class="box"></div></div><div class="space"></div><div class="flex row gap-m"><div class="box"></div><div class="box"></div><div class="box"></div></div><div class="space"></div><div class="flex row gap-m"><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div></div><div class="space"></div><div class="flex row gap-m"><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div><div class="box"></div></div><div class="space"></div><h1>fixed-width boxes</h1><div class="flex row gap-m"><div class="box w-100 fixed"></div><div class="box"></div><div class="box w-100 fixed"></div></div><div class="space"></div><div class="flex row gap-m"><div class="box"></div><div class="box w-100 fixed"></div><div class="box"></div><div class="box"></div></div><div class="space"></div><div class="flex row gap-m"><div class="box w-100 fixed"></div><div class="box w-100 fixed"></div><div class="box w-100 fixed"></div></div><h1>box vertical alignment within row</h1><div class="flex row gap-m items-stretch"><div class="box h-init"><div class="content h-100"></div></div><div class="box h-init"><div class="content h-20"></div></div><div class="box h-init"><div class="content h-50"></div></div></div><div class="space"></div><div class="flex row gap-m items-start"><div class="box h-init"><div class="content h-100"></div></div><div class="box h-init"><div class="content h-20"></div></div><div class="box h-init"><div class="content h-50"></div></div></div><div class="space"></div><div class="flex row gap-m items-center"><div class="box h-init"><div class="content h-100"></div></div><div class="box h-init"><div class="content h-20"></div></div><div class="box h-init"><div class="content h-50"></div></div></div><div class="space"></div><div class="flex row gap-m items-end"><div class="box h-init"><div class="content h-100"></div></div><div class="box h-init"><div class="content h-20"></div></div><div class="box h-init"><div class="content h-50"></div></div></div><div class="space"></div><div class="flex row gap-m items-baseline"><div class="box h-init"><div class="content h-100 p-t-2">content</div></div><div class="box h-init"><div class="content h-20">content</div></div><div class="box h-init"><div class="content h-50 p-t-1">content</div></div></div><h1>content alignment within box</h1><div class="flex row gap-m"><div class="box h-init content-start"><div class="content h-100"></div></div><div class="box h-init content-start"><div class="content h-20"></div></div><div class="box h-init content-start"><div class="content h-50"></div></div></div><div class="space"></div><div class="flex row gap-m"><div class="box h-init content-center"><div class="content h-100"></div></div><div class="box h-init content-center"><div class="content h-20"></div></div><div class="box h-init content-center"><div class="content h-50"></div></div></div><div class="space"></div><div class="flex row gap-m"><div class="box h-init content-end"><div class="content h-100"></div></div><div class="box h-init content-end"><div class="content h-20"></div></div><div class="box h-init content-end"><div class="content h-50"></div></div></div><h1>box horizontal alignment within row</h1><div class="flex row gap-m justify-start"><div class="box w-100 fixed"></div><div class="box w-100 fixed"></div><div class="box w-100 fixed"></div></div><div class="space"></div><div class="flex row gap-m justify-center"><div class="box w-100 fixed"></div><div class="box w-100 fixed"></div><div class="box w-100 fixed"></div></div><div class="space"></div><div class="flex row gap-m justify-end"><div class="box w-100 fixed"></div><div class="box w-100 fixed"></div><div class="box w-100 fixed"></div></div><div class="space"></div><div class="flex row gap-m justify-between"><div class="box w-100 fixed"></div><div class="box w-100 fixed"></div><div class="box w-100 fixed"></div></div><div class="space"></div><div class="flex row gap-m justify-around"><div class="box w-100 fixed"></div><div class="box w-100 fixed"></div><div class="box w-100 fixed"></div></div><div class="space"></div><div class="flex row gap-m justify-evenly"><div class="box w-100 fixed"></div><div class="box w-100 fixed"></div><div class="box w-100 fixed"></div></div><h1>gap sizes</h1><div class="flex row gap-0"><div class="box"></div><div class="box"></div><div class="box"></div></div><div class="space"></div><div class="flex row gap-s"><div class="box"></div><div class="box"></div><div class="box"></div></div><div class="space"></div><div class="flex row gap-m"><div class="box"></div><div class="box"></div><div class="box"></div></div><div class="space"></div><div class="flex row gap-l"><div class="box"></div><div class="box"></div><div class="box"></div></div><div class="space"></div><div class="flex row gap-xl"><div class="box"></div><div class="box"></div><div class="box"></div></div><div class="space"></div><div class="flex row gap-xxl"><div class="box"></div><div class="box"></div><div class="box"></div></div><h1>flex columns</h1><div class="flex col gap-m h-400"><div class="box h-init"></div><div class="box h-init"></div><div class="box h-init"></div></div><hr><div class="flex col gap-m h-400"><div class="box h-50 fixed"></div><div class="box h-init"></div><div class="box h-100"></div></div><hr><div class="flex col gap-m h-400 justify-between"><div class="box h-50 fixed"></div><div class="box h-50 fixed"></div><div class="box h-50 fixed"></div></div><h1>nested rows &amp; cols</h1><div class="flex col"><div class="box flex row"><div class="box flex col"><div class="box"></div><div class="box"></div></div><div class="box"></div></div><div class="box flex row"><div class="box"></div><div class="box"></div></div></div></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>flox</title>
+    <link rel="stylesheet" type="text/css" href="flox.css">
+    <style type="text/css">
+      body, html {
+        margin: 0;
+        padding: 0;
+        font-size: 100%;
+        text-align: center;
+        font-family: monospace;
+        width: 100%;
+      }
+      
+      .space {
+        margin-top: 1rem;
+      }
+      
+      .box {
+        height: 100px;
+        background: rgba(0, 140, 140, 1);
+        /*box-shadow: inset 0 0 0 0.5rem rgb(0, 100, 100);*/
+        color: #fff;
+      }
+      
+      .box > .box {
+        background: yellow;
+      }
+      
+      .box > .box > .box {
+        background: blue;
+      }
+      
+      .content {
+        display: block;
+        background: tomato;
+      }
+      
+      .w-20 {
+        width: 20px;
+      }
+      
+      .w-50 {
+        width: 50px;
+      }
+      
+      .w-100 {
+        width: 100px;
+      }
+      
+      .h-init {
+        height: initial;
+      }
+      
+      .h-20 {
+        height: 20px;
+      }
+      
+      .h-50 {
+        height: 50px;
+      }
+      
+      .h-100 {
+        height: 100px;
+      }
+      
+      .h-400 {
+        height: 400px;
+      }
+      
+      .p-t-1 {
+        padding-top: 1rem;
+      }
+      
+      .p-t-2 {
+        padding-top: 2rem;
+      }
+      
+      .p-t-3 {
+        padding-top: 3rem;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1>auto grids</h1>
+    <div class="flex row gap-m">
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <div class="space"></div>
+    <h1>fixed-width boxes</h1>
+    <div class="flex row gap-m">
+      <div class="box w-100 fixed"></div>
+      <div class="box"></div>
+      <div class="box w-100 fixed"></div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m">
+      <div class="box"></div>
+      <div class="box w-100 fixed"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m">
+      <div class="box w-100 fixed"></div>
+      <div class="box w-100 fixed"></div>
+      <div class="box w-100 fixed"></div>
+    </div>
+    <h1>box vertical alignment within row</h1>
+    <div class="flex row gap-m items-stretch">
+      <div class="box h-init">
+        <div class="content h-100"></div>
+      </div>
+      <div class="box h-init">
+        <div class="content h-20"></div>
+      </div>
+      <div class="box h-init">
+        <div class="content h-50"></div>
+      </div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m items-start">
+      <div class="box h-init">
+        <div class="content h-100"></div>
+      </div>
+      <div class="box h-init">
+        <div class="content h-20"></div>
+      </div>
+      <div class="box h-init">
+        <div class="content h-50"></div>
+      </div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m items-center">
+      <div class="box h-init">
+        <div class="content h-100"></div>
+      </div>
+      <div class="box h-init">
+        <div class="content h-20"></div>
+      </div>
+      <div class="box h-init">
+        <div class="content h-50"></div>
+      </div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m items-end">
+      <div class="box h-init">
+        <div class="content h-100"></div>
+      </div>
+      <div class="box h-init">
+        <div class="content h-20"></div>
+      </div>
+      <div class="box h-init">
+        <div class="content h-50"></div>
+      </div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m items-baseline">
+      <div class="box h-init">
+        <div class="content h-100 p-t-2">content</div>
+      </div>
+      <div class="box h-init">
+        <div class="content h-20">content</div>
+      </div>
+      <div class="box h-init">
+        <div class="content h-50 p-t-1">content</div>
+      </div>
+    </div>
+    <h1>content alignment within box</h1>
+    <div class="flex row gap-m">
+      <div class="box h-init content-start">
+        <div class="content h-100"></div>
+      </div>
+      <div class="box h-init content-start">
+        <div class="content h-20"></div>
+      </div>
+      <div class="box h-init content-start">
+        <div class="content h-50"></div>
+      </div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m">
+      <div class="box h-init content-center">
+        <div class="content h-100"></div>
+      </div>
+      <div class="box h-init content-center">
+        <div class="content h-20"></div>
+      </div>
+      <div class="box h-init content-center">
+        <div class="content h-50"></div>
+      </div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m">
+      <div class="box h-init content-end">
+        <div class="content h-100"></div>
+      </div>
+      <div class="box h-init content-end">
+        <div class="content h-20"></div>
+      </div>
+      <div class="box h-init content-end">
+        <div class="content h-50"></div>
+      </div>
+    </div>
+    <h1>box horizontal alignment within row</h1>
+    <div class="flex row gap-m justify-start">
+      <div class="box w-100 fixed"></div>
+      <div class="box w-100 fixed"></div>
+      <div class="box w-100 fixed"></div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m justify-center">
+      <div class="box w-100 fixed"></div>
+      <div class="box w-100 fixed"></div>
+      <div class="box w-100 fixed"></div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m justify-end">
+      <div class="box w-100 fixed"></div>
+      <div class="box w-100 fixed"></div>
+      <div class="box w-100 fixed"></div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m justify-between">
+      <div class="box w-100 fixed"></div>
+      <div class="box w-100 fixed"></div>
+      <div class="box w-100 fixed"></div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m justify-around">
+      <div class="box w-100 fixed"></div>
+      <div class="box w-100 fixed"></div>
+      <div class="box w-100 fixed"></div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m justify-evenly">
+      <div class="box w-100 fixed"></div>
+      <div class="box w-100 fixed"></div>
+      <div class="box w-100 fixed"></div>
+    </div>
+    <h1>gap sizes</h1>
+    <div class="flex row gap-0">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-s">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-m">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-l">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-xl">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <div class="space"></div>
+    <div class="flex row gap-xxl">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <h1>flex columns</h1>
+    <div class="flex col gap-m h-400">
+      <div class="box h-init"></div>
+      <div class="box h-init"></div>
+      <div class="box h-init"></div>
+    </div>
+    <hr>
+    <div class="flex col gap-m h-400">
+      <div class="box h-50 fixed"></div>
+      <div class="box h-init"></div>
+      <div class="box h-100"></div>
+    </div>
+    <hr>
+    <div class="flex col gap-m h-400 justify-between">
+      <div class="box h-50 fixed"></div>
+      <div class="box h-50 fixed"></div>
+      <div class="box h-50 fixed"></div>
+    </div>
+    <h1>nested rows &amp; cols</h1>
+    <div class="flex col">
+      <div class="box flex row">
+        <div class="box flex col">
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        <div class="box"></div>
+      </div>
+      <div class="box flex row">
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+    </div>
+  </body>
+</html>

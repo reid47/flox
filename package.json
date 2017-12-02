@@ -1,5 +1,5 @@
 {
-  "name": "flox",
+  "name": "flox-css",
   "version": "0.0.1",
   "description": "Small, easy-to-use CSS layout library based on flexbox",
   "main": "flox.css",
